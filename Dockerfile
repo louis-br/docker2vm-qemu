@@ -13,6 +13,5 @@ RUN rc-update add sshd default
 RUN wget -O - https://tailscale.com/install.sh | sh
 COPY overlayRoot.sh /sbin/
 COPY curl.key /curl.key
-RUN gpg --import /curl.key && rm /curl.key
 COPY tailscale-url/curl.sh /curl.sh
 COPY entrypoint.sh /entrypoint.sh
